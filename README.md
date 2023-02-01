@@ -1,17 +1,7 @@
-# course_management
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # GameZone
+#Setting up the project in the local system
+
+1.Fork the repository to your GitHub
+2.clone using git clone [repo link]
+3.Open the project in your IDE
+4.run flutter pub get
