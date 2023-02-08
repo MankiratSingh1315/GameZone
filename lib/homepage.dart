@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:course_management/flip%20the%20coin.dart';
 import 'package:course_management/rollthedice.dart';
 import 'package:flutter/material.dart';
 import 'package:course_management/tictactoe.dart';
@@ -25,6 +26,11 @@ class _HomePageState extends State<HomePage> {
                     fontFamily: 'mont',
                     fontSize: 60,
                     fontWeight: FontWeight.w400),
+              ),
+              Container(
+                height: 50,
+                child: Text(
+                    'Made by Mankirat Singh\nRoll No. : 102203620\nBranch : COE'),
               ),
               SizedBox(
                 height: 20,
@@ -77,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RollTheDice()),
+                    MaterialPageRoute(builder: (context) => TicTacToe()),
                   );
                 },
                 child: Text(
@@ -90,9 +96,24 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: EdgeInsets.all(5),
-                child: Image(image: AssetImage('assets/images/snandlad.png')),
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FlipTheCoin()),
+                      );
+                    },
+                    child: Image(
+                        image: AssetImage('assets/images/flip the coin.jpg'))),
               ),
-              Text('Snake and Ladders', style: TextStyle(fontSize: 20)),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FlipTheCoin()),
+                    );
+                  },
+                  child: Text('Flip the coin', style: TextStyle(fontSize: 20))),
               SizedBox(
                 height: 20,
               ),

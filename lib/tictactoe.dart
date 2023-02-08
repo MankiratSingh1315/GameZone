@@ -35,7 +35,7 @@ class _TicTacToeState extends State<TicTacToe> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(0.0),
+                    padding: const EdgeInsets.only(top: 30.0, left: 20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -55,8 +55,9 @@ class _TicTacToeState extends State<TicTacToe> {
                       ],
                     ),
                   ),
+                  Spacer(),
                   Padding(
-                    padding: const EdgeInsets.all(30.0),
+                    padding: const EdgeInsets.only(top: 30.0, right: 20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -80,44 +81,58 @@ class _TicTacToeState extends State<TicTacToe> {
           ),
           Expanded(
             flex: 4,
-            child: GridView.builder(
-                itemCount: 9,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3, childAspectRatio: 1),
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onTap: () {
-                      _tapped(index);
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Color.fromARGB(255, 0, 0, 0))),
-                      child: Center(
-                        child: Text(
-                          displayElement[index],
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 0, 0, 0),
-                              fontSize: 55),
+            child: Padding(
+              padding: const EdgeInsets.all(35.0),
+              child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 9,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, childAspectRatio: 1),
+                  itemBuilder: (BuildContext context, int index) {
+                    return GestureDetector(
+                      onTap: () {
+                        _tapped(index);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Color.fromARGB(255, 0, 0, 0))),
+                        child: Center(
+                          child: Text(
+                            displayElement[index],
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                fontSize: 55),
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                }),
-          ),
-          Expanded(
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: _clearScoreBoard,
-                    child: Text("Clear Score Board"),
-                  ),
-                ],
-              ),
+                    );
+                  }),
             ),
-          )
+          ),
+          Container(
+            height: 50,
+            child: Text(
+                'Made by Mankirat Singh\nRoll No. : 102203620\nBranch : COE'),
+          ),
+          SizedBox(height: 20),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: ElevatedButton(
+                      onPressed: _clearScoreBoard,
+                      child: Text(
+                        "Clear Score Board",
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green)),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

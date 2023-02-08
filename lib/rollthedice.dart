@@ -60,8 +60,16 @@ class _RollTheDiceState extends State<RollTheDice>
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 50,
+              child: Text(
+                  'Made by Mankirat Singh\nRoll No. : 102203620\nBranch : COE'),
+            ),
+            Spacer(),
             Row(
               children: [
                 Expanded(
@@ -82,10 +90,8 @@ class _RollTheDiceState extends State<RollTheDice>
                 ))
               ],
             ),
-            Align(
-                alignment: AlignmentDirectional.topCenter,
-                child:
-                    ElevatedButton(onPressed: roll, child: const Text('Roll')))
+            Spacer(),
+            ElevatedButton(onPressed: roll, child: const Text('Roll'))
           ],
         ),
       ),
